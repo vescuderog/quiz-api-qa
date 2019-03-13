@@ -4,7 +4,7 @@ from http import HTTPStatus
 from quiz_api_client.http_client import HttpClient
 
 
-class QuestionsTestCase(unittest.TestCase):
+class TestQuestions(unittest.TestCase):
 
     def setUp(self):
         self.rest_client = HttpClient(url='http://localhost:8080', logging=True)
