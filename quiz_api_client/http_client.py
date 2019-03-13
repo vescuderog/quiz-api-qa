@@ -11,6 +11,7 @@ class HttpClient(object):
         self.logging = kwargs.get('logging', False)
         # Init session
         self.session = requests.Session()
+        # Default headers
         self.headers = {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
@@ -18,6 +19,7 @@ class HttpClient(object):
         self.session.headers.update(self.headers)
 
     def close(self):
+        # Close session
         self.session.close()
 
     # Method GET
@@ -30,7 +32,43 @@ class HttpClient(object):
             return response
         except Exception as e:
             # TODO: Manage the exception
-            print('ERROR: ', e)
+            print('ERROR GET: ', e)
+
+    # Method POST
+    def post(self, endpoint, payload):
+        self.log(self.logging)
+        try:
+            data = json.dumps(payload)
+            response = self.session.post(self.url + endpoint, data=data)
+            print('Status: {} and headers: {}'.format(response.status_code, response.headers))
+            return response
+        except Exception as e:
+            # TODO: Manage the exception
+            print('ERROR POST: ', e)
+
+    # Method PATCH
+    def patch(self, endpoint, payload):
+        self.log(self.logging)
+        try:
+            data = json.dumps(payload)
+            response = self.session.patch(self.url + endpoint, data=data)
+            print('Status: {} and response: {}'.format(response.status_code, json.dumps(response.json(), indent=4,
+                                                                                        sort_keys=True)))
+            return response
+        except Exception as e:
+            # TODO: Manage the exception
+            print('ERROR PATCH: ', e)
+
+    # Method DELETE
+    def delete(self, endpoint):
+        self.log(self.logging)
+        try:
+            response = self.session.delete(self.url + endpoint)
+            print('Status: {}'.format(response.status_code))
+            return response
+        except Exception as e:
+            # TODO: Manage the exception
+            print('ERROR DELETE: ', e)
 
     # Log request
     @staticmethod
