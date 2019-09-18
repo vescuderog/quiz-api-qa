@@ -1,5 +1,7 @@
 # Quiz API QA
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 Quiz API QA is a Python library for test automation.
 
 ## Getting Started
@@ -8,11 +10,12 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-Install [Python](https://www.python.org/) and [pip](https://pip.pypa.io/en/stable/).
+For building and running the application you need:
+
+- [Python](https://www.python.org/) 
+- [pip](https://pip.pypa.io/en/stable/).
 
 ### Installing
-
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install quiz-api-qa.
 
 ```bash
 pip install -r requirements.txt
