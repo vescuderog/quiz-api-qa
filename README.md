@@ -13,7 +13,8 @@ These instructions will get you a copy of the project up and running on your loc
 For building and running the application you need:
 
 - [Python](https://www.python.org/) 
-- [pip](https://pip.pypa.io/en/stable/)
+- [Pip](https://pip.pypa.io/en/stable/)
+- [Virtualenv](https://virtualenv.pypa.io/en/stable/) - optional
 
 ### Installing
 
