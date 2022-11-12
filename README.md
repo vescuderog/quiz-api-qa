@@ -1,5 +1,6 @@
 # Quiz QA
 
+![Python application](https://github.com/vescuderog/appium-selenium-example/workflows/Python%20application/badge.svg)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Quiz QA is a Python library for test automation.
